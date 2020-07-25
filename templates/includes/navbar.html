@@ -1,0 +1,33 @@
+<center>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="/">Home-Munici</a>
+		    </div>
+
+		    <ul class="nav navbar-nav-right">
+		      {% if session.logged_in %}
+		      <li><a href="/"><i class='fa fas-home'></i>Home</a></li>
+		      <li><a href="/about">About</a></li>
+		       {% if session['username']=='employee'%}
+		       <li><a href='/employee'>DashBoard</a></li>
+		       {% elif session['username']=='adminC' %}
+		      <li><a href='/complaint_dashboard'>DashBoard</a></li>
+		       {% else %}
+		       <li> <a href = '/admin'>Dashboard</a></li>
+		       {% endif %}
+		      <li><a href = '/logout'>Logout</a></li>
+		      {% else %}
+		       <li><a href="/"><i class='fa fas-home'></i>Home</a></li>
+		      <li><a href="/about">About</a></li> 
+		      <li><a href='/login'>Login</a></li>
+		      {% endif %}
+		    </ul>
+		  </div>
+		</nav>
+	<style>
+		li {
+			padding:5px
+		}
+	</style>
+</center>

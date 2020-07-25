@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Admin</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            
+	</head>
+	<body>
+		{% include 'includes/navbar.html' %}
+		{% include 'includes/messages.html' %}
+
+		<div class='jumbotrom text-center'>
+			<a href = "/admin" class='btn btn-primary'>Back</a>
+		<table class='table table-striped'>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>FatherName</th>
+				<th>Address</th>
+				<th>Old Name</th>
+				<th>New Name</th>
+				<th>TimeStamp</th>
+				<th>Phone Number</th>
+				
+			</tr>
+			{% for i in data %}
+			<tr>
+				<td>{{i.ID}}</td>
+				<td>{{i.Name}}</td>
+				<td>{{i.FatherName}}</td>
+				<td>{{i.Address}}</td>
+				<td>{{i.OldName}}</td>
+				<td>{{i.NewName}}</td>
+				<td>{{i.Date}}</td>
+				<td>{{i.Phone_Number}}</td>
+				<td>
+					<form action={{url_for('delete_row',id=i.ID)}} method='POST'>
+						<input type='hidden' value='DELETE' name='_method'>
+						<input class = 'btn btn-danger' type = 'submit' value='DELETE'>
+					</form>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	</body>
+</html>

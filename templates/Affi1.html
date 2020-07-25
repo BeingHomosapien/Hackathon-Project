@@ -1,0 +1,26 @@
+{%extends 'template.html'%}
+
+{%block body%}
+<div class='jumbotron text-center'>
+	<h4>Name-Change Affidavit</h4>
+	<h1>Enter Your Details</h1>
+<form action='' method='POST'>
+	<center>
+	<label>Name</label>
+	<input class = 'form-group' type='text' name='name'>&nbsp;&nbsp;&nbsp;&nbsp;
+	<label>Father Name</label>
+	<input class = 'form-group' type='text' name='fathername'><br>
+	<label>Old Name</label>
+	<input class = 'form-group' type='text' name='oldname'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<label>New Name</label>
+	<input  class='form-group' type = 'text' name='newname'><br>
+	<label>Address</label>
+	<input class = 'form-group' type='text' name='address'>
+	<label>Phone Number</label>
+	<input type ='text' class='form-group' name ='phonenumber'>
+    <br>
+	<button type='submit' value='submit'>SUBMIT</button>
+	</center>
+</form>
+</div>
+{%endblock%}

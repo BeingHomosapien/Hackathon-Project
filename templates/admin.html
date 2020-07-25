@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Admin</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		{% include 'includes/navbar.html' %}
+		{% include 'includes/messages.html' %}
+
+		<div class='jumbotrom text-center'>
+			<p> Welcome To the DashBoard, {{username}}</p>
+			<p>{{data}}</p>
+			<a href = "/admin/Affidavit1" class='btn btn-primary'>Name Change Affidavit</a>
+		<table class='table table-striped'>
+			<tr>
+				<th>Username</th>
+				<th>Password</th>
+			</tr>
+			{% for i in data %}
+			<tr>
+				<td>{{i.username}}</td>
+				<td>{{i.password}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	</body>
+</html>
