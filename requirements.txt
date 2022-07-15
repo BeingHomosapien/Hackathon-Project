@@ -57,7 +57,7 @@ decorator==4.4.0
 defusedxml==0.6.0
 detectem==0.7.0
 distlib==0.3.0
-distributed==2.1.0
+distributed==2021.10.0
 Django==2.2.7
 docker==3.4.1
 docutils==0.14
